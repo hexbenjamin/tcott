@@ -1,0 +1,25 @@
+
+# compile = "poetry run reflex init"
+run = "reflex run"
+entrypoint = "main.py"
+modules = ["python-3.10:v18-20230807-322e88b"]
+
+hidden = [".pythonlibs"]
+
+[nix]
+channel = "stable-23_05"
+
+[env]
+REPLIT_PYTHON_PACKAGE_LAYER = "1"
+REPLIT_NODEJS_PACKAGE_LAYER = "1"
+
+[unitTest]
+language = "python3"
+
+[deployment]
+run = ["python3", "main.py"]
+deploymentTarget = "cloudrun"
+
+[[ports]]
+localPort = 8000
+externalPort = 3000
