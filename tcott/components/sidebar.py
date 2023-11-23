@@ -1,9 +1,9 @@
 """Sidebar component for the app."""
 
+import reflex as rx  # upm package(reflex)
+
 from tcott import styles
 from tcott.state import State
-
-import reflex as rx
 
 
 def sidebar_header() -> rx.Component:
@@ -77,8 +77,7 @@ def sidebar_item(text: str, icon: str, url: str) -> rx.Component:
     """
     # Whether the item is active.
     active = (State.router.page.path == f"/{text.lower()}") | (
-        (State.router.page.path == "/") & text == "Home"
-    )
+        (State.router.page.path == "/") & text == "Home")
 
     return rx.link(
         rx.hstack(
@@ -87,9 +86,7 @@ def sidebar_item(text: str, icon: str, url: str) -> rx.Component:
                 height="2.5em",
                 padding="0.5em",
             ),
-            rx.text(
-                text,
-            ),
+            rx.text(text, ),
             bg=rx.cond(
                 active,
                 styles.accent_color,
@@ -125,11 +122,11 @@ def sidebar() -> rx.Component:
             rx.vstack(
                 *[
                     sidebar_item(
-                        text=page.get("title", page["route"].strip("/").capitalize()),
+                        text=page.get("title",
+                                      page["route"].strip("/").capitalize()),
                         icon=page.get("image", "/github.svg"),
                         url=page["route"],
-                    )
-                    for page in get_decorated_pages()
+                    ) for page in get_decorated_pages()
                 ],
                 width="100%",
                 overflow_y="auto",

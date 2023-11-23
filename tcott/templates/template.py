@@ -2,11 +2,12 @@
 
 from __future__ import annotations
 
-from tcott import styles
-from tcott.components.sidebar import sidebar
 from typing import Callable
 
-import reflex as rx
+import reflex as rx  # upm package(reflex)
+
+from tcott import styles
+from tcott.components.sidebar import sidebar
 
 # Meta tags for the app.
 default_meta = [
@@ -32,8 +33,7 @@ def menu_button() -> rx.Component:
                     tag="hamburger",
                     size="4em",
                     color=styles.text_color,
-                ),
-            ),
+                ), ),
             rx.menu_list(
                 *[
                     rx.menu_item(
@@ -41,17 +41,17 @@ def menu_button() -> rx.Component:
                             page["title"],
                             href=page["route"],
                             width="100%",
-                        )
-                    )
-                    for page in get_decorated_pages()
+                        )) for page in get_decorated_pages()
                 ],
                 rx.menu_divider(),
                 rx.menu_item(
-                    rx.link("About", href="https://github.com/reflex-dev", width="100%")
-                ),
+                    rx.link("About",
+                            href="https://github.com/reflex-dev",
+                            width="100%")),
                 rx.menu_item(
-                    rx.link("Contact", href="mailto:founders@=reflex.dev", width="100%")
-                ),
+                    rx.link("Contact",
+                            href="mailto:founders@=reflex.dev",
+                            width="100%")),
             ),
         ),
         position="fixed",

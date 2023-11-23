@@ -1,4 +1,6 @@
 *.db
 *.py[cod]
+.pythonlibs
+.upm
 .web
 __pycache__/

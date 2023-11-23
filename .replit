@@ -1,8 +1,7 @@
-
-# compile = "poetry run reflex init"
-run = "reflex run"
+compile = "poetry run reflex init"
+run = "poetry run reflex run"
 entrypoint = "main.py"
-modules = ["python-3.10:v18-20230807-322e88b"]
+# modules = ["python-3.10:v18-20230807-322e88b"]
 
 hidden = [".pythonlibs"]
 

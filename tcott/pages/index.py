@@ -1,8 +1,8 @@
 """The home page."""
 
-from tcott.templates import template
+import reflex as rx  # upm package(reflex)
 
-import reflex as rx
+from tcott.templates import template
 
 
 @template(route="/", title="tcott")
