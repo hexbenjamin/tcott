@@ -2,6 +2,7 @@
 *.py[cod]
 .pythonlibs
 .upm
+.venv
 .web
 __pycache__/
 poetry.lock
