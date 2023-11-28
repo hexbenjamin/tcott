@@ -3,6 +3,6 @@
 .pythonlibs
 .upm
 .venv
-.web
+.web/*
 __pycache__/
 poetry.lock

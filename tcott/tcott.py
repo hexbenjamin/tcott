@@ -1,11 +1,7 @@
-"""Welcome to Reflex! This file outlines the steps to create a basic app."""
-from rxconfig import config
+"""tcott moment"""
+# from rxconfig import config
 
 import reflex as rx
-
-docs_url = "https://reflex.dev/docs/getting-started/introduction"
-filename = f"{config.app_name}/{config.app_name}.py"
-
 
 class State(rx.State):
     """The app state."""
@@ -13,14 +9,13 @@ class State(rx.State):
     pass
 
 
-@rx.page(route="/", title="TCOTT")
+@rx.page(route="/", title="T.C.O.T.T.")
 def index() -> rx.Component:
     return rx.box(
         rx.container(
             rx.vstack(
                 rx.image(
                     src="centerpiece.png",
-                    # box_shadow="0px 0px 20px 0px rgba(0,0,0,0.69)",
                     width="auto",
                     height="66vh",
                 ),
@@ -36,18 +31,19 @@ def index() -> rx.Component:
             rx.image(
                 src="/dmcl.png",
                 width="auto",
-                height="3em",
+                height="6vh",
                 mix_blend_mode="hard-light",
+                position="relative",
                 margin="1em",
             ),
             rx.spacer(),
             rx.image(
                 src="/cv.png",
                 width="auto",
-                height="2em",
+                height="3vh",
                 mix_blend_mode="hard-light",
                 position="relative",
-                margin="1em",
+                right="1em",
             ),
             padding="0.5em",
             position="fixed",
@@ -57,9 +53,6 @@ def index() -> rx.Component:
             background_color="hsl(300, 13%, 55%, 0.69)",
             backdrop_filter="blur(4px)",
         ),
-        # width="100vw",
-        # height="100vh",
-        # border="2px dashed white",
         background_image="url('purple_bricks.png')",
         background_repeat="repeat",
         padding="2.5em",
@@ -72,5 +65,5 @@ def index() -> rx.Component:
 
 
 # Add state and page to the app.
-app = rx.App()
+app = rx.App(overlay_component=None)
 app.compile()
